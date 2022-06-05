@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FileUploadController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +27,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('file-upload', [FileUploadController::class, 'index']);
+Route::post('store', [FileUploadController::class, 'store']);
