@@ -1,7 +1,9 @@
 <?php
-use App\Http\Controllers\PageController;
+
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FileUploadController;
+use Illuminate\Http\Request;
+use app\Events\ChatEvent;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,10 +16,8 @@ use App\Http\Controllers\FileUploadController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return ('welcome');
 });
-
-Route::get('/pages/{slug}' , [PageController::class, 'show']);
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -26,7 +26,29 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/pliki', function () {
+        return view('pliki');
+    })->name('pliki');
 });
+Route::middleware([])->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    })->name('welcome');
 
-Route::get('file-upload', [FileUploadController::class, 'index']);
-Route::post('store', [FileUploadController::class, 'store']);
+    Route::get('/chat', function () {
+        return view('chat');
+    })->name('chat');
+});
+Route::post('send', function (Request $request) {
+    $request->validate([
+        'name' => 'required',
+        'message' => 'required'
+    ]);
+
+    $message = [
+        'name' => $request->name,
+        'message' => $request->message,
+    ];
+
+    ChatEvent::dispatch($message);
+});

@@ -61,6 +61,10 @@ class User extends Authenticatable
 
     public function files()
     {
-      return $this->hasMany(File::class);
+        return $this->hasMany(File::class);
+    }
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
     }
 }

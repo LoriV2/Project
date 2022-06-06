@@ -1,8 +1,9 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+        <a href='http://127.0.0.1:8000'>
+        <img src=http://127.0.0.1:8000/favicon.ico style="max-height: 100px;max-width:100px;" />
+            </a>        </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
             {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}

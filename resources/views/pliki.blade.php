@@ -6,7 +6,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 ">
-            {{ __('Przesyłanie') }}
+            {{ __('Pliki') }}
         </h2>
     </x-slot>
 
@@ -15,24 +15,13 @@
             <div>
                 <div class="bg-white shadow-xl sm:rounded-lg">
                     <div class="d-flex justify-content-center">
-                        Wrzuć tutaj swoje pliki
+                        Tutaj są twoje pliki
                     </div>
-
-                    <p class="card-text">
-                    <form method='POST' action="{{url('createfile')}}" enctype="multipart/form-data">
-                        <input class='mt-6 py-6' style='width:80%px; height:80%; border:solid 1px black;' type="file" name="file" />
-                        <div class="d-flex justify-content-center">
-
-                            <button style='color:black; margin-top:10px;' class='btn btn-secondary' type="submit">Prześlij plik</button>
-                        </div>
-                    </form>
-                    </p>
-
-
                 </div>
-
             </div>
-
+        </div>
+        <div class="bg-white shadow-xl sm:rounded-lg">
+            haaaaaaaaaaaaaaaaaaaaaaa
         </div>
     </body>
 </x-app-layout>
