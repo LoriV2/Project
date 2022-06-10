@@ -16,10 +16,10 @@
 </head>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
     <div class="container-fluid">
-        <a class="pr-3 navbar-brand" href="http://127.0.0.1:8000/"><img style="max-height: 90px; margin-left:10px;" src='favicon.ico' /></a>
+        <a class="pr-3 navbar-brand" href="https://heheeeee.herokuapp.com/"><img style="max-height: 90px; margin-left:10px;" src='favicon.ico' /></a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/">Home</a>
+                <a class="nav-link active" aria-current="page" href="https://heheeeee.herokuapp.com/">Home</a>
             </li>
             <li class="nav-item">
 
@@ -58,7 +58,7 @@
         <br>
         Do poprawnego działania aplikacja potrzebuje:
         <br>
-        php: ^8.0.2,
+        php: ^8.1.2,
         <br>
         guzzlehttp/guzzle: ^7.2,
         <br>

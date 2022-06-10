@@ -18,10 +18,10 @@
 </head>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
     <div class="container-fluid">
-        <a class="pr-3 navbar-brand" href="http://127.0.0.1:8000/"><img style="max-height: 90px; margin-left:10px;" src='favicon.ico' /></a>
+        <a class="pr-3 navbar-brand" href="https://heheeeee.herokuapp.com/"><img style="max-height: 90px; margin-left:10px;" src='favicon.ico' /></a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/">Home</a>
+                <a class="nav-link active" aria-current="page" href="https://heheeeee.herokuapp.com/">Home</a>
             </li>
             <li class="nav-item">
 
@@ -94,7 +94,7 @@
                 } else if (message.val() == '') {
                     message.addClass('is-invalid')
                 } else {
-                    Http.post(" http://127.0.0.1:8000/send", {
+                    Http.post(" https://heheeeee.herokuapp.com/send", {
                         'name': name.val(),
                         'message': message.val()
                     }).then((value) => {
