@@ -94,11 +94,11 @@
                 } else if (message.val() == '') {
                     message.addClass('is-invalid')
                 } else {
-                    Http.post(" https://heheeeee.herokuapp.com/send", {
+                    Http.post("{{ url('send')}}", {
                         'name': name.val(),
                         'message': message.val()
-                    }).then((value) => {
-                        message.val(value);
+                    }).then(() => {
+                        message.val('');
                     });
                 }
             });
