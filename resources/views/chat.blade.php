@@ -48,7 +48,7 @@
 
 <body class="antialiased bg-dark ">
 
-    <div style="margin-top:1%;margin-left:1%;margin-right:1%;" class="container bg-white shadow-xl sm:rounded-lg">
+    <div style="width:100%;margin-top:1%;margin-left:1%;margin-right:1%;" class="container bg-white shadow-xl sm:rounded-lg">
         <div class="row mt-3">
             <div class="col-6 offset-3">
                 <div class="card">
