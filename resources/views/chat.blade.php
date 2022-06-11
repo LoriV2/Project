@@ -67,6 +67,7 @@
     <form method="POST" action="/send">
         <input type="text" name="message">
         <input type="submit">
+        {{ csrf_field() }}
     </form>
 
 </body>
