@@ -2,6 +2,7 @@
 
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Event;
 use app\Events\ChatEvent;
 /*
 |--------------------------------------------------------------------------
@@ -40,5 +41,5 @@ Route::middleware([])->group(function () {
 });
 Route::post('/send', function(){
     $message = request()->message;
-    event(new ChatEvent($message));
+    Event::fire(new App\Events\ChatEvent($message));
 });
