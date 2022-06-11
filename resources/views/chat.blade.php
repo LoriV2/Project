@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -75,7 +76,7 @@
             </div>
         </div>
     </div>
-    <script src="{{ https://heheeeee.herokuapp.com/js/app.js }}"></script>
+    <script src="https://heheeeee.herokuapp.com/js/app.js"></script>
     <script>
         event( ChatEvent('hello world'));
         $(function() {
