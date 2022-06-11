@@ -58,12 +58,7 @@
         });
 
         var channel = pusher.subscribe('message-board');
-        channel.bind('Chat-Event', function(data) {
-            board = document.getElementById('message-board');
-            board.insertAdjacentHTML(
-                'beforeend',
-                `<span style="background-color: lime">` + data.message + `</span><br>`, )
-        });
+        channel.bind('Chat-Event', function(data) {});
     </script>
     </head>
     @auth
@@ -82,7 +77,19 @@
     </form>
     @endauth
     <div id="message-board">
-
+        @foreach ($messages as $message)
+        <p>{{$messages->user_name}}
+            <?php
+            if ($messages->zweryfikowany == 1) {
+                echo "◊";
+            } else
+                echo "";
+            ?>
+            :  </p>
+        <p>{{$messages->message}}</p>
+        <br>
+        <p>{{$messages->updated_at}}</p>
+        @endforeach
     </div>
 
 </body>
