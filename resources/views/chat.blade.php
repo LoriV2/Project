@@ -78,14 +78,14 @@
     </div>
     <script src="https://heheeeee.herokuapp.com/js/app.js"></script>
     <script>
-        event( ChatEvent('hello world'));
+        
         $(function() {
             const Http = window.axios;
             const Echo = window.Echo;
             const name = $("#name");
             const message = $("#message");
             let value = '';
-
+            event( ChatEvent('hello world'));
             $("input, textarea").keyup(function() {
                 $(this).removeClass('is-invalid');
             });
