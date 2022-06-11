@@ -25,10 +25,8 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected $namespace = [
-        'event' => 'App\Http\Events',
-        'controller' => 'App\\Http\\Controllers'
-    ];
+    protected $space = 'App\\Http\\Controllers';
+    protected $namespace = 'App\Http\Events';
     public function boot()
     {
         if ($this->app->environment('production')) {
@@ -39,11 +37,11 @@ class RouteServiceProvider extends ServiceProvider
         $this->routes(function () {
             Route::middleware('api')
                 ->prefix('api')
-                ->namespace($this->namespace['event'])
+                ->namespace($this->namespace)
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
-                ->namespace($this->namespace['event'])
+                ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });
     }
