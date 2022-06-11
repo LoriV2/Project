@@ -78,12 +78,18 @@
     @endauth
     <div id="message-board">
         @foreach ($messages as $message)
-        <p>{{$messages->user_name}}
+        <p>
+            if (!$messages->isEmpty()) {
+            {{$messages->user_name}}
             if ($messages->zweryfikowany == 1) {
-                echo "◊";
+            echo "◊";
             } else
-                echo "";
-            :  </p>
+            echo "";
+            }else 
+            echo "nikt jeszcze nic nie napisał";
+            
+            :
+        </p>
         <p>{{$messages->message}}</p>
         <br>
         <p>{{$messages->updated_at}}</p>
