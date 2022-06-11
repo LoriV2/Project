@@ -2,7 +2,7 @@
     <x-jet-authentication-card>
         <x-slot name="logo">
         <a href='https://heheeeee.herokuapp.com'>
-        <img src=https://heheeeee.herokuapp.com/favicon.ico style="max-height: 100px;max-width:100px;" />
+        <img src='https://heheeeee.herokuapp.com/favicon.ico' style="max-height: 100px;max-width:100px;" />
             </a>        </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
