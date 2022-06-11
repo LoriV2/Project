@@ -75,7 +75,7 @@
             </div>
         </div>
     </div>
-    <script src="{{ url('js/app.js') }}"></script>
+    <script src="{{ https://heheeeee.herokuapp.com/js/app.js }}"></script>
     <script>
         event(new ChatEvent('hello world'));
         $(function() {
