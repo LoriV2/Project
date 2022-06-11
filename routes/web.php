@@ -7,7 +7,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use app\Events;
 use App\Events\ChatEvent;
-use App\Httpp\Controllers\SuperBaza;
+use App\Http\Controllers\superbaza;
 use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
@@ -23,14 +23,17 @@ use Illuminate\Support\Facades\DB;
 Route::get('/', function () {
     return ('welcome');
 });
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
+
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
     Route::get('/pliki', function () {
         return view('pliki');
     })->name('pliki');
@@ -40,10 +43,7 @@ Route::middleware([])->group(function () {
         return view('welcome');
     })->name('welcome');
 
-    Route::get('/chat', function(){
-        $messages = DB::select('SELECT * FROM Chat');
-        return view('chat', ['messages' => $messages]);
-    })->name('chat');
+    Route::get('/chat', [superbaza::class, 'Baza'])->name('chat');
 });
 Route::post('/sendnonverified', function (Request $request) {
     $user_name = $request->input('user_name');
