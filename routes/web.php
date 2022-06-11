@@ -42,7 +42,6 @@ Route::middleware([])->group(function () {
 });
 Route::post('/send', function(){
     $message = request()->message;
-    ChatEvent::dispatch($message);
     event(new ChatEvent($message));
     return view('chat');
 });

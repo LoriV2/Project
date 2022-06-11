@@ -59,7 +59,6 @@
 
         var channel = pusher.subscribe('message-board');
         channel.bind('Chat-Event', function(data) {
-            console.log(data.message);
             board = document.getElementById('message-board');
             board.insertAdjacentHTML(
                 'beforeend',
