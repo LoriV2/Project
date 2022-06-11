@@ -5,8 +5,8 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="http://127.0.0.1:8000">
-                        <img src=http://127.0.0.1:8000/favicon.ico style="max-height: 100px;max-width:100px;" />
+                    <a href="https://heheeeee.herokuapp.com">
+                        <img src=https://heheeeee.herokuapp.com/favicon.ico style="max-height: 100px;max-width:100px;" />
                     </a>
                 </div>
 
