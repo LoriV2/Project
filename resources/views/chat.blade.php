@@ -59,11 +59,7 @@
 
         var channel = pusher.subscribe('message-board');
         channel.bind('Chat-Event', function(data) {
-                    container = document.getElementById('message-board')
-                    container.insertAdjacentHTML(
-                        data.message,
-                        `<span style="background-color: lime">, Avocado</span>`,);
-                    });
+            console.log(data.value);
     </script>
     </head>
 
