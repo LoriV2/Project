@@ -63,7 +63,7 @@
             board = document.getElementById('message-board');
             board.insertAdjacentHTML(
                 'beforeend',
-                `<span style="background-color: lime">`+ data.message +`</span>`, )
+                `<span style="background-color: lime">`+ data.message +`</span><br>`, )
         });
     </script>
     </head>
