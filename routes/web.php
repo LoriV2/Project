@@ -38,7 +38,7 @@ Route::middleware([])->group(function () {
         return view('chat');
     })->name('chat');
 });
-Route::post('/send', function () {
+Route::post('/send', function(){
     $message = request()->message;
-    event(new ChatEvent($message));
+    event(new app\Events\ChatEvent($message));
 });
