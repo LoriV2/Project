@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('Chat', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_name')->unsigned();
+            $table->text('user_name');
             $table->text('message');
+            $table->integer('zweryfikowany');
             $table->timestamps();
         });
     }
