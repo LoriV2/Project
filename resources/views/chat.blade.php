@@ -83,17 +83,18 @@
             {{$messages->user_name}}
             if ($messages->zweryfikowany == 1) {
             echo "◊";
-            } else
-            echo "";
-            }else 
-            echo "nikt jeszcze nic nie napisał";
-            
+            } else{
+            echo "";}
             :
         </p>
         <p>{{$messages->message}}</p>
         <br>
         <p>{{$messages->updated_at}}</p>
         @endforeach
+        }else
+        echo "nikt jeszcze nic nie napisał";
+
+
     </div>
 
 </body>
