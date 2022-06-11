@@ -57,8 +57,8 @@
             cluster: 'eu'
         });
 
-        var channel = pusher.subscribe('my-channel');
-        channel.bind('ChatEvent', function(data) {
+        var channel = pusher.subscribe('message-board');
+        channel.bind('Chat-Event', function(data) {
             document.getElementById('message-board').innerHTML = jsonify(data) , '<br>';
         });
     </script>

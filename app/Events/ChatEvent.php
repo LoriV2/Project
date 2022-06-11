@@ -30,10 +30,10 @@ class ChatEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('my-channel');
+        return new Channel('message-board');
     }
     public function broadcastAs()
     {
-        return 'my-event';
+        return 'Chat-Event';
     }
 }
