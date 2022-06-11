@@ -13,7 +13,7 @@
             </div>
         @endif
 
-        <form method="POST" action="http://heheeeee.herokuapp.com/login">
+        <form method="POST" action="https://heheeeee.herokuapp.com/login">
             @csrf
 
             <div>
