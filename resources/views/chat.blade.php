@@ -59,7 +59,7 @@
 
         var channel = pusher.subscribe('my-channel');
         channel.bind('my-event', function(data) {
-            alert(JSON.stringify(data));
+            document.getElementById('message-board').innerHTML = data , '<br>';
         });
     </script>
     </head>
@@ -69,6 +69,9 @@
         <input type="submit">
         {{ csrf_field() }}
     </form>
+    <div id="message-board">
+
+    </div>
 
 </body>
 
