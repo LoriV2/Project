@@ -62,12 +62,17 @@
             board = document.getElementById('message-board');
             board.insertAdjacentHTML(
                 'beforeend',
-                `<span style="background-color: lime">`+ data.message +`</span><br>`, )
+                `<span style="background-color: lime">` + data.message + `</span><br>`, )
         });
     </script>
     </head>
 
     <form method="POST" action="/send">
+        @auth
+        <p>Zacznij wpisywać wiadomość</p>
+        @else
+        <input type="text" name="user_name" placeholder="Wpisz swój nick">
+        @endauth
         <input type="text" name="message">
         <input type="submit">
         {{ csrf_field() }}
