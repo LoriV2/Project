@@ -58,7 +58,7 @@
         });
 
         var channel = pusher.subscribe('my-channel');
-        channel.bind('my-event', function(data) {
+        channel.bind('ChatEvent', function(data) {
             document.getElementById('message-board').innerHTML = jsonify(data) , '<br>';
         });
     </script>
