@@ -79,12 +79,10 @@
     <div id="message-board">
         @foreach ($messages as $message)
         <p>{{$messages->user_name}}
-            <?php
             if ($messages->zweryfikowany == 1) {
                 echo "◊";
             } else
                 echo "";
-            ?>
             :  </p>
         <p>{{$messages->message}}</p>
         <br>
