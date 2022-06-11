@@ -60,7 +60,7 @@
         var channel = pusher.subscribe('message-board');
         channel.bind('Chat-Event', function(data) {
             console.log(data.value);
-        }
+        });
     </script>
     </head>
 
