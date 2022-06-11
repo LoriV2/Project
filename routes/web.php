@@ -7,6 +7,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use app\Events;
 use App\Events\ChatEvent;
+use App\Httpp\Controllers\SuperBaza;
 use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
@@ -39,16 +40,14 @@ Route::middleware([])->group(function () {
         return view('welcome');
     })->name('welcome');
 
-    Route::get('/chat', function () {
-        return view('chat');
-    })->name('chat');
+    Route::get('/chat', [SuperBaza::class, 'Baza'])->name('chat');
 });
 Route::post('/sendnonverified', function (Request $request) {
     $user_name = $request->input('user_name');
     $verified = 1;
     $message = request()->message;
     event(new ChatEvent($message));
-    $data=array('user_name'=>$user_name,'message'=>$message,'zweryfikowany'=>$verified);
+    $data = array('user_name' => $user_name, 'message' => $message, 'zweryfikowany' => $verified);
     DB::table('chat')->insert($data);
     return view('chat');
 });
@@ -63,7 +62,7 @@ Route::middleware([
             $verified = 2;
             $message = request()->message;
             event(new ChatEvent($message));
-            $data=array('user_name'=>$user_name,'message'=>$message,'zweryfikowany'=>$verified);
+            $data = array('user_name' => $user_name, 'message' => $message, 'zweryfikowany' => $verified);
             DB::table('chat')->insert($data);
             return view('chat');
         });
