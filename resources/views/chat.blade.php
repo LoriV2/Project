@@ -77,7 +77,7 @@
     </div>
     <script src="{{ https://heheeeee.herokuapp.com/js/app.js }}"></script>
     <script>
-        event(new ChatEvent('hello world'));
+        event( ChatEvent('hello world'));
         $(function() {
             const Http = window.axios;
             const Echo = window.Echo;
