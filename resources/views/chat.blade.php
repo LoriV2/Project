@@ -46,7 +46,8 @@
         </ul>
 </nav>
 
-<body class="antialiased bg-light " >
+<body class="antialiased bg-light ">
+
 
     <script>
         // Enable pusher logging - don't include this in production
@@ -61,8 +62,8 @@
                     console.log(data.message);
                     board = document.getElementById('message-board');
                     board.insertAdjacentHTML(
-                        data.message,
-                        `<span style="background-color: lime">, Avocado</span>`,)
+                        'beforeend',
+                        `<span style="background-color: lime">,`, data.message ,`</span>`,
                     });
     </script>
     </head>
