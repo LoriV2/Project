@@ -3,7 +3,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Event;
-use app\Events\ChatEvent;
+use app\Events;
+use App\Events\ChatEvent;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
