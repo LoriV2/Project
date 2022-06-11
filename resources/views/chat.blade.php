@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Leeee</title>
-
+    <script src="https://js.pusher.com/7.1/pusher.min.js"></script>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -48,69 +48,30 @@
 
 <body class="antialiased bg-dark ">
 
-    <div style="width:100%;margin-top:1%;margin-left:1%;margin-right:1%;" class="container bg-white shadow-xl sm:rounded-lg">
-        <div class="row mt-3">
-            <div class="col-6 offset-3">
-                <div class="card">
-                    <div class="card-header">
-                        Chat pokój
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <input type="text" class="form control" placeholder="Twoje imie" id="Name">
-                        </div>
-                        <div style="padding-top:10px ;" class="form-group" id="data-message">
 
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" class="form-control" placeholder="Twoja wiadomość"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button id="przycisk" class="btn btn-block btn-primary">
-                                Wyślij
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://heheeeee.herokuapp.com/js/app.js"></script>
     <script>
-        
-        $(function() {
-            const Http = window.axios;
-            const Echo = window.Echo;
-            const name = $("#name");
-            const message = $("#message");
-            let value = '';
-            event( ChatEvent('hello world'));
-            $("input, textarea").keyup(function() {
-                $(this).removeClass('is-invalid');
-            });
+        // Enable pusher logging - don't include this in production
+        Pusher.logToConsole = true;
 
-            $('#przycisk').click(function() {
-                if (name.val() == '') {
-                    name.addClass('is-invalid');
-                } else if (message.val() == '') {
-                    message.addClass('is-invalid')
-                } else {
-                    Http.post("{{ url('send')}}", {
-                        'name': name.val(),
-                        'message': message.val()
-                    }).then(() => {
-                        message.val('');
-                    });
-                }
-            });
+        var pusher = new Pusher('dc89faadd64e9671ab01', {
+            cluster: 'eu'
+        });
 
-            let channel = Echo.channel('channel-chat');
-            channel.listen('ChatEvent', function(data) {
-                $('#data-message').append('<p>${data.message.name}</p> : ${data.message.message} <br>');
-
-            })
-        })
+        var channel = pusher.subscribe('my-channel');
+        channel.bind('my-event', function(data) {
+            alert(JSON.stringify(data));
+        });
     </script>
+    </head>
+
+    <body>
+        <h1>Pusher Test</h1>
+        <p>
+            Try publishing an event to channel <code>my-channel</code>
+            with event name <code>my-event</code>.
+        </p>
+    </body>
+
 </body>
 
 </html>
