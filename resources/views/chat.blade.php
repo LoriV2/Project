@@ -59,12 +59,13 @@
 
         var channel = pusher.subscribe('message-board');
         channel.bind('Chat-Event', function(data) {
-                    console.log(data.message);
-                    board = document.getElementById('message-board');
-                    board.insertAdjacentHTML(
-                        'beforeend',
-                        `<span style="background-color: lime">,`, data.message ,`</span>`,)
-                    });
+            console.log(data.message);
+            board = document.getElementById('message-board');
+            board.insertAdjacentHTML(
+                'beforeend',
+                `<span id="n" style="background-color: lime"></span>`, )
+            board.innerHTML = data.message;
+        });
     </script>
     </head>
 
