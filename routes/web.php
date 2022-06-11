@@ -40,7 +40,10 @@ Route::middleware([])->group(function () {
         return view('welcome');
     })->name('welcome');
 
-    Route::get('/chat', [SuperBaza::class, 'Baza'])->name('chat');
+    Route::get('/chat', function(){
+        $messages = DB::select('SELECT * FROM Chat');
+        return view('chat', ['messages' => $messages]);
+    })->name('chat');
 });
 Route::post('/sendnonverified', function (Request $request) {
     $user_name = $request->input('user_name');
