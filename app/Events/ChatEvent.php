@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -16,7 +17,6 @@ class ChatEvent implements ShouldBroadcast
      *
      * @return void
      */
-
     public $message;
     public function __construct($message)
     {
@@ -30,11 +30,6 @@ class ChatEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return ['channel-chat'];
+        return new Channel('my-channel');
     }
-
-    public function broadcastAs()
-  {
-      return 'my-event';
-  }
 }

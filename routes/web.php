@@ -2,7 +2,6 @@
 
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 use app\Events\ChatEvent;
 /*
 |--------------------------------------------------------------------------
@@ -39,16 +38,7 @@ Route::middleware([])->group(function () {
         return view('chat');
     })->name('chat');
 });
-Route::post('send', function (Request $request) {
-    $request->validate([
-        'name' => 'required',
-        'message' => 'required'
-    ]);
-
-    $message = [
-        'name' => $request->name,
-        'message' => $request->message,
-    ];
-
-    ChatEvent::dispatch($message);
+Route::post('/send', function () {
+    $message = request()->message;
+    event(new ChatEvent($message));
 });
