@@ -59,7 +59,7 @@
 
         var channel = pusher.subscribe('my-channel');
         channel.bind('my-event', function(data) {
-            document.getElementById('message-board').innerHTML = data , '<br>';
+            document.getElementById('message-board').innerHTML = jsonify(data) , '<br>';
         });
     </script>
     </head>
