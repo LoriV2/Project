@@ -46,8 +46,7 @@
         </ul>
 </nav>
 
-<body class="antialiased bg-dark ">
-
+<body class="antialiased bg-light " >
 
     <script>
         // Enable pusher logging - don't include this in production
@@ -59,8 +58,12 @@
 
         var channel = pusher.subscribe('message-board');
         channel.bind('Chat-Event', function(data) {
-            console.log(data.message);
-        });
+                    console.log(data.message);
+                    board = document.getElementById('message-board');
+                    board.insertAdjacentHTML(
+                        data.message,
+                        `<span style="background-color: lime">, Avocado</span>`,)
+                    });
     </script>
     </head>
 
