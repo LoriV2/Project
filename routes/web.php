@@ -19,6 +19,7 @@ Route::get('/', function () {
     return ('welcome');
 });
 Route::middleware([
+    'scheme' => 'https',
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
@@ -30,7 +31,7 @@ Route::middleware([
         return view('pliki');
     })->name('pliki');
 });
-Route::middleware([])->group(function () {
+Route::middleware(['scheme' => 'https'])->group(function () {
     Route::get('/', function () {
         return view('welcome');
     })->name('welcome');
