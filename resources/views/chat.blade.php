@@ -79,7 +79,7 @@
     <div id="message-board">
         @foreach ($messages as $message)
         <p>
-            if (!$messages->user_name=='') {
+            if (!$messages->user_name==NULL) {
             {{$messages->user_name}}
             if ($messages->zweryfikowany == 1) {
             echo "◊";
