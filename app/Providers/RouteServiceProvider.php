@@ -25,9 +25,10 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
+    protected $namespace = 'App\Http\Events';
     public function boot()
     {
-        if($this->app->environment('production')) {
+        if ($this->app->environment('production')) {
             URL::forceScheme('https');
         }
         $this->configureRateLimiting();
@@ -35,9 +36,11 @@ class RouteServiceProvider extends ServiceProvider
         $this->routes(function () {
             Route::middleware('api')
                 ->prefix('api')
+                ->namespace($this->namespace)
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
+                ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });
     }
