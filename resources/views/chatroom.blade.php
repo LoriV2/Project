@@ -31,7 +31,7 @@
 
 <div id="message-board">
     @foreach($messages as $messages)
-    <p>{{$messages}}
+    <p>{{$messages->id}}
 
     </p>
     <p></p>
