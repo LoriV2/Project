@@ -31,7 +31,7 @@
 <body style="background-color:#7A7E7E" onLoad="window.scroll(0, 10000000000000000000)">
     <div id="message-board" ;>
         @php
-        if (isset($messages->user_name)){
+        if (isset($messages->zweryfikowany)){
         foreach($messages as $messages){
         echo "<p>";
             echo $messages->user_name;
