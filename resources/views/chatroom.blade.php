@@ -40,7 +40,7 @@
             }else{
             echo "🤣";
             }
-            : echo $messages->message;
+             echo ": ".$messages->message;
         </p>
         <p></p>
         }};
