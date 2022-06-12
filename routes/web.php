@@ -44,7 +44,7 @@ Route::middleware([
         $file_name = time() . '.' . $request->file->extension();
         $data = array('user' => $user, 'file_name' => $file_name);
         DB::table('files')->insert($data);
-        Storage::disk('s3')->put('pliki/'.$file_name, $request->file);
+        Storage::disk('s3')->put('pliki'.$user, $request->file);
         return view('dashboard');
     });
 });
