@@ -40,8 +40,7 @@
     <div style="background-color:#8D8B8B; width:30%">
         @auth
         <form method="POST" action="/sendverified">
-            <p>Zacznij wpisywać wiadomość</p>
-            <input type="text" name="message">
+            <input type="text" name="message" placeholder="Wpisz swoją wiadomość">
             <input type="submit">
             {{ csrf_field() }}
         </form>
