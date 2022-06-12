@@ -24,9 +24,8 @@
             @else
             {{"🤣"}}
             @endif
-            :
+            : {{$messages->message}}
         </p>
-        <p>{{$messages->message}}</p>
         <p></p>
         @endforeach
     </div>
