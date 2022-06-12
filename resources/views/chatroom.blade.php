@@ -39,10 +39,14 @@
             echo "😎";
             }else{
             echo "🤣";
-            }
-             echo ": ".$messages->message."</p>
-        <p></p>";
-        }};
+            };
+             echo ": ";
+             echo $messages->message;
+             echo "</p><p></p>";
+        };
+    }else 
+    echo "Nikt jeszcze nic nie napisał!"
+    ;
         @endphp
     </div>
     <div style="background-color:#8D8B8B; width:30%">
