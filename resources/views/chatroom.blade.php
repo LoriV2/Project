@@ -30,24 +30,18 @@
 
 <body style="background-color:#7A7E7E" onLoad="window.scroll(0, 10000000000000000000)">
     <div id="message-board" ;>
-        @php
-        if (isset($messages)){
-        foreach($messages as $messages){
-        echo "<p>";
-            echo $messages->user_name;
-            if ($messages->zweryfikowany == 2){
-            echo "😎";
-            }else{
-            echo "🤣";
-            };
-            echo ": ";
-            echo $messages->message;
-            echo "</p>
-        <p></p>";
-        };
-        }else
-        echo "Nikt jeszcze nic nie napisał!";
-        @endphp
+        @foreach($messages as $messages)
+         <p>
+            $messages->user_name;
+            @if ($messages->zweryfikowany == 2)
+            {{"😎"}}
+            @else
+            {{"🤣"}}
+            : 
+            $messages->message
+            {{</p><p></p>}}
+        @else
+        {{"Nikt jeszcze nic nie napisał!"}}
     </div>
     <div style="background-color:#8D8B8B; width:30%">
         @auth
