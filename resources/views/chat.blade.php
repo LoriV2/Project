@@ -68,14 +68,12 @@
             <p>Zacznij wpisywać wiadomość</p>
             <input type="text" name="message">
             <input type="submit">
-            {{ csrf_field() }}
         </form>
         
         <form method="POST" action="/sendnonverified">
             <input type="text" name="user_name" placeholder="Wpisz swój nick">
             <input type="text" name="message">
             <input type="submit">
-            {{ csrf_field() }}
         </form>
         
         <div id="message-board">
