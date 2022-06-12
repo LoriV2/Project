@@ -27,18 +27,18 @@
 
             </li>
             <li style="align-content:right ;" class="nav-item">
-                @auth
+                
                 <a href="{{ url('/dashboard') }}" class="nav-link active">Pliki i konto</a>
-                @else
+                
                 <a href="{{ route('login') }}" class="nav-link active">Log in</a>
 
 
             </li>
             <li class="nav-item">
-                @if (Route::has('register'))
+                
                 <a href="{{ route('register') }}" class="nav-link active">Register</a>
-                @endif
-                @endauth
+                
+                
             </li>
             <li>
                 <a href="https://heheeeee.herokuapp.com/chat" class="nav-link active">Chat</a>
