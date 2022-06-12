@@ -35,7 +35,8 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('/pliki', function () {
-        $files = DB::select('SELECT * FROM files');
+        $user = auth()->id();
+        $files = DB::select('SELECT * FROM files WHERE user = $user ');
         return view('pliki', ['files' => $files]);
     })->name('pliki');
 
