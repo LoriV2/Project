@@ -41,7 +41,10 @@
         @auth
         <form method="POST" action="/sendverified">
             <input type="text" name="message" placeholder="Wpisz swoją wiadomość">
-            <input style="background: rgb(255,21,0);
+            <input style="
+             -webkit-text-stroke-width: 1px;
+             -webkit-text-stroke-color: white;
+            background: rgb(255,21,0);
 background: linear-gradient(90deg, rgba(255,21,0,1) 0%, rgba(255,231,0,1) 9%, rgba(91,255,0,1) 21%, rgba(0,255,205,1) 31%, rgba(0,0,255,1) 40%, rgba(119,0,255,1) 56%, rgba(255,0,172,1) 64%, rgba(255,0,0,1) 77%);" type="submit">
             {{ csrf_field() }}
         </form>
@@ -49,7 +52,10 @@ background: linear-gradient(90deg, rgba(255,21,0,1) 0%, rgba(255,231,0,1) 9%, rg
         <form method="POST" action="/sendnonverified">
             <input type="text" name="user_name" placeholder="Wpisz swój nick">
             <input type="text" name="message" placeholder="Wpisz swoją wiadomość">
-            <input style="background: rgb(255,21,0);
+            <input style="
+            -webkit-text-stroke-width: 1px;
+             -webkit-text-stroke-color: white;
+            background: rgb(255,21,0);
 background: linear-gradient(90deg, rgba(255,21,0,1) 0%, rgba(255,231,0,1) 9%, rgba(91,255,0,1) 21%, rgba(0,255,205,1) 31%, rgba(0,0,255,1) 40%, rgba(119,0,255,1) 56%, rgba(255,0,172,1) 64%, rgba(255,0,0,1) 77%);" type="submit">
             {{ csrf_field() }}
         </form>
