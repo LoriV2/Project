@@ -20,9 +20,9 @@
                     <form method='POST' action="{{url('createfile')}}" enctype="multipart/form-data">
                         <input class='mt-6 py-6' style='width:80%px; height:80%; border:solid 1px black;' type="file" name="file" />
                         <div class="d-flex justify-content-center">
-
                             <button style='color:black; margin-top:10px;' class='btn btn-secondary' type="submit">Prześlij plik</button>
                         </div>
+                        {{ csrf_field() }}
                     </form>
                     </p>
 
