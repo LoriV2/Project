@@ -10,6 +10,7 @@ use App\Events\ChatEvent;
 use App\Http\Controllers;
 use App\Http\Controllers\superbaza;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +22,14 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-Route::get('/createfile', function (Request $request) {
+Route::post('/createfile', function (Request $request) {
+    $user_id = auth()->id();
+    $request -> file;
+    $file_name = time().'.'.$request->file->extension();
+    $data = array('user_id' => $user_id , 'file_name' =>$file_name);
+    DB::table('files')->insert($data);
+    Storage::disk('s3')->put('pliki', $request -> file);
+    return view('dashboard');
 });
 
 Route::middleware([
@@ -76,6 +84,6 @@ Route::middleware([
 
 );
 Route::get('/chatroom', function () {
-    $messages = DB::select('SELECT * FROM Chat');
+    $messages = DB::select('SELECT * FROM files');
     return view('chatroom', ['messages' => $messages]);
 });

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('files', function (Blueprint $table){
         $table->string('id')->primary();
         $table->string('user_id');
-        $table->string('path');
+        $table->string('file_name');
         });
     }
 
