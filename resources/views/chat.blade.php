@@ -78,15 +78,9 @@
         {{ csrf_field() }}
     </form>
     @endauth
-    <iframe title="description">
-    <div id="message-board">
-        @foreach($messages as $message)
-        <p>echo $message->User_name;
-        
-        </p>
-        <p>echo $message->message;</p>
-        @endforeach
-    </div>
+    
+    <iframe src="https://heheeeee.herokuapp.com/chatroom" title="description">
+    
     </iframe>
 </body>
 
