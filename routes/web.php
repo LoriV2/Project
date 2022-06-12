@@ -22,15 +22,7 @@ use Illuminate\Support\Facades\Storage;
 |
 */
 
-Route::post('/createfile', function (Request $request) {
-    $user_id = auth()->id();
-    $request -> file;
-    $file_name = time().'.'.$request->file->extension();
-    $data = array('user_id' => $user_id , 'file_name' =>$file_name);
-    DB::table('files')->insert($data);
-    Storage::disk('s3')->put('pliki', $request -> file);
-    return view('dashboard');
-});
+
 
 Route::middleware([
     'auth:sanctum',
@@ -45,6 +37,16 @@ Route::middleware([
     Route::get('/pliki', function () {
         return view('pliki');
     })->name('pliki');
+
+    Route::post('/createfile', function (Request $request) {
+        $user_id = auth()->id();
+        $request->file;
+        $file_name = time() . '.' . $request->file->extension();
+        $data = array('user_id' => $user_id, 'file_name' => $file_name);
+        DB::table('files')->insert($data);
+        Storage::disk('s3')->put('pliki', $request->file);
+        return view('dashboard');
+    });
 });
 Route::middleware([])->group(function () {
     Route::get('/', function () {
