@@ -25,9 +25,7 @@
             $user = auth()->id();
             foreach ($files as $files){
             $path = 'pliki/'.$user.'/'.$files->file_name;
-            $url = Storage::temporaryUrl(
-            $path, now()->addMinutes(5)
-            );
+            $url = Storage::Url($path);
             echo "<img src='".$url."'>";};
             @endphp
         </div>
