@@ -81,12 +81,7 @@
     <div id="message-board">
         @foreach($messages as $message)
         <p>$message->User_name
-        $zw = $message->Zweryfikowany;
-            @if($zw == 2)
-            echo"⇴";
-            @else
-            echo"";
-            @endif
+        
         </p>
         <p>$message->message</p>
         @endforeach
