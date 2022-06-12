@@ -16,7 +16,7 @@
 
 
 <div id="message-board">
-    @foreach($messages as $message)
+    @foreach($message as $messages)
     <p>{{$message->User_name}}
 
     </p>
