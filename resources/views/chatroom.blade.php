@@ -30,7 +30,7 @@
 
 <body style="background-color:#7A7E7E" onLoad="window.scroll(0, 10000000000000000000)">
     <div id="message-board" ;>
-        @if (isset($messages->user_name))
+        @if (isset(!$messages->user_name))
         @foreach($messages as $messages)
         <p>
             {{$messages->user_name}}
