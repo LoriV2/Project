@@ -16,7 +16,7 @@
 
 
 <body onLoad="window.scroll(0, 1000000)">
-    <div id="message-board">
+    <div id="message-board" style="background-color:#7A7E7E ;">
         @foreach($messages as $messages)
         <p>{{$messages->user_name}}
             @if ($messages->zweryfikowany == 2)
@@ -24,26 +24,27 @@
             @else
             {{"🤣"}}
             @endif
-            : </p>
+            :
+        </p>
         <p>{{$messages->message}}</p>
         <p></p>
         @endforeach
     </div>
-<div style="background-color:black ;">
-    @auth
-    <form method="POST" action="/sendverified">
-        <p>Zacznij wpisywać wiadomość</p>
-        <input type="text" name="message">
-        <input type="submit">
-        {{ csrf_field() }}
-    </form>
-    @else
-    <form method="POST" action="/sendnonverified">
-        <input type="text" name="user_name" placeholder="Wpisz swój nick">
-        <input type="text" name="message">
-        <input type="submit">
-        {{ csrf_field() }}
-    </form>
-    @endauth
-</div>
+    <div style="background-color:#8D8B8B ;">
+        @auth
+        <form method="POST" action="/sendverified">
+            <p>Zacznij wpisywać wiadomość</p>
+            <input type="text" name="message">
+            <input type="submit">
+            {{ csrf_field() }}
+        </form>
+        @else
+        <form method="POST" action="/sendnonverified">
+            <input type="text" name="user_name" placeholder="Wpisz swój nick">
+            <input type="text" name="message">
+            <input type="submit">
+            {{ csrf_field() }}
+        </form>
+        @endauth
+    </div>
 </body>
