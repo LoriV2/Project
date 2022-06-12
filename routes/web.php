@@ -43,9 +43,8 @@ Route::middleware([])->group(function () {
     Route::get('/', function () {
         return view('welcome');
     })->name('welcome');
-
-    Route::post('/chat', [App\Http\Controllers\superbaza::class, 'Baza'])->name('chat');
 });
+Route::post('/chat', [App\Http\Controllers\superbaza::class, 'Baza']);
 Route::post('/sendnonverified', function (Request $request) {
     $user_name = $request->input('user_name');
     $verified = 1;
