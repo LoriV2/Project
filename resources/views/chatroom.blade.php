@@ -30,7 +30,6 @@
 
 <body style="background-color:#7A7E7E" onLoad="window.scroll(0, 10000000000000000000)">
     <div id="message-board" ;>
-        @if ($messages->user_name)
         @foreach($messages as $messages)
         <p>
             {{$messages->user_name}}
@@ -44,9 +43,6 @@
         </p>
         <p></p>
         @endforeach
-        @else
-        {{"Nikt jescze nic nie napisał!"}}
-        @endif
     </div>
     <div style="background-color:#8D8B8B; width:30%">
         @auth
