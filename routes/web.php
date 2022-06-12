@@ -45,8 +45,7 @@ Route::middleware([])->group(function () {
     })->name('welcome');
 });
 Route::get('/chat', function () {
-    $messages = DB::select('SELECT * FROM Chat');
-    return view('chat', ['messages' => $messages]);
+    return view('chat');
 });
 Route::post('/sendnonverified', function (Request $request) {
     $user_name = $request->input('user_name');
@@ -78,5 +77,6 @@ Route::middleware([
 
 );
 Route::get('/chatroom', function () {
-    return view('chatroom');
+    $messages = DB::select('SELECT * FROM Chat');
+    return view('chat', ['messages' => $messages]);
 });
