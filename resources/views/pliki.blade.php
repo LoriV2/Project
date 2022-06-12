@@ -23,8 +23,9 @@
         <div class="bg-white shadow-xl sm:rounded-lg">
             @php
             $user = auth()->id();
+            $file=$file_name->file_name;
             foreach ($files as $files){
-            $path = 'pliki/'.$user.'/'.$file_name->file_name;
+            $path = 'pliki/'.$user.'/'.$file;
             $contents = Storage::get($path);
             echo $contenst;
             }
