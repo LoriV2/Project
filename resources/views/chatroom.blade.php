@@ -40,9 +40,8 @@
             }else{
             echo "🤣";
             }
-             echo ": ".$messages->message;
-        </p>
-        <p></p>
+             echo ": ".$messages->message."</p>
+        <p></p>";
         }};
         @endphp
     </div>
