@@ -23,7 +23,7 @@
         <div class="bg-white shadow-xl sm:rounded-lg">
             @php
             $user = auth()->id();
-            $contents = Storage::get(file/.$user/);
+            $contents = Storage::get('file/''.$user.'/);
             foreach($contenst as $contenst){
             echo $contenst;
             };

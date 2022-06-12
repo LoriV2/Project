@@ -9,7 +9,7 @@
 <script src="https://js.pusher.com/7.1/pusher.min.js"></script>
 <script>
     // Enable pusher logging - don't include this in production
-    function Jeszczepisze(){};
+    function Jeszczepisze() {};
     Pusher.logToConsole = true;
 
     var pusher = new Pusher('dc89faadd64e9671ab01', {
@@ -30,18 +30,21 @@
 
 <body style="background-color:#7A7E7E" onLoad="window.scroll(0, 10000000000000000000)">
     <div id="message-board" ;>
-        @foreach($messages as $messages)
-        <p>
+        @php
+        if (isset($messages)){
+        foreach($messages as $messages){
+        echo "<p>";
             {{$messages->user_name}}
-            @if ($messages->zweryfikowany == 2)
+            if ($messages->zweryfikowany == 2){
             {{"😎"}}
-            @else
+            }else{
             {{"🤣"}}
-            @endif
+            }
             : {{$messages->message}}
         </p>
         <p></p>
-        @endforeach
+        }};
+        @endphp
     </div>
     <div style="background-color:#8D8B8B; width:30%">
         @auth
