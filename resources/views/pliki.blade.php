@@ -23,7 +23,8 @@
         <div class="bg-white shadow-xl sm:rounded-lg">
             @php
             $user = auth()->id();
-            $contents = Storage::get(file/$user/);
+            $path = 'pliki/'.$user;
+            $contents = Storage::get($path);
             foreach($contenst as $contenst){
             echo $contenst;
             };
