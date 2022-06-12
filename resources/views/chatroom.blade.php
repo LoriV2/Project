@@ -14,7 +14,7 @@
 
 
 
-<body onLoad="window.scroll(0, 150)">
+<body onLoad="window.scroll(0, 1000000)">
     <div id="message-board">
         @foreach($messages as $messages)
         <p>{{$messages->id}}
