@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-Route::get('/createfile', function () {
+Route::get('/createfile', function (Request $request) {
 });
 
 Route::middleware([
