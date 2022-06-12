@@ -17,9 +17,9 @@
 
 <div id="message-board">
     @foreach($messages as $messages)
-    <p>{{$messages->User_name}}
+    <p>{{$messages}}
 
     </p>
-    <p>{{$messages->message}}</p>
+    <p></p>
     @endforeach
 </div>
