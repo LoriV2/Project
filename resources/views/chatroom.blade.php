@@ -9,6 +9,7 @@
 <script src="https://js.pusher.com/7.1/pusher.min.js"></script>
 <script>
     // Enable pusher logging - don't include this in production
+    function Jeszczepisze();
     Pusher.logToConsole = true;
 
     var pusher = new Pusher('dc89faadd64e9671ab01', {
@@ -17,7 +18,11 @@
 
     var channel = pusher.subscribe('message-board');
     channel.bind('Chat-Event', function(data) {
-        document.location.reload(true)
+        if (Jeszczepisze(true)) {
+
+        } else {
+            document.location.reload(true)
+        }
     });
 </script>
 
@@ -40,23 +45,31 @@
     <div style="background-color:#8D8B8B; width:30%">
         @auth
         <form method="POST" action="/sendverified">
-            <input type="text" name="message" placeholder="Wpisz swoją wiadomość">
+            <input onfocus="Jeszczepisze(true)" onblur="Jeszczepisze(false)" type="text" name="message" placeholder="Wpisz swoją wiadomość">
             <input style="
              -webkit-text-stroke-width: 1px;
              -webkit-text-stroke-color: white;
             background: rgb(255,21,0);
-background: linear-gradient(90deg, rgba(255,21,0,1) 0%, rgba(255,231,0,1) 9%, rgba(91,255,0,1) 21%, rgba(0,255,205,1) 31%, rgba(0,0,255,1) 40%, rgba(119,0,255,1) 56%, rgba(255,0,172,1) 64%, rgba(255,0,0,1) 77%);" type="submit">
+            background: linear-gradient(90deg, rgba(255,21,0,1) 0%, 
+            rgba(255,231,0,1) 9%, rgba(91,255,0,1) 21%, 
+            rgba(0,255,205,1) 31%, rgba(0,0,255,1) 40%, 
+            rgba(119,0,255,1) 56%, rgba(255,0,172,1) 64%, 
+            rgba(255,0,0,1) 77%);" type="submit">
             {{ csrf_field() }}
         </form>
         @else
         <form method="POST" action="/sendnonverified">
-            <input type="text" name="user_name" placeholder="Wpisz swój nick">
-            <input type="text" name="message" placeholder="Wpisz swoją wiadomość">
-            <input style="
+            <input onfocus="Jeszczepisze(true)" onblur="Jeszczepisze(false)" type="text" name="user_name" placeholder="Wpisz swój nick">
+            <input onfocus="Jeszczepisze(true)" onblur="Jeszczepisze(false)" type="text" name="message" placeholder="Wpisz swoją wiadomość">
+            <input onclick="Klik()" style="
             -webkit-text-stroke-width: 1px;
              -webkit-text-stroke-color: white;
             background: rgb(255,21,0);
-background: linear-gradient(90deg, rgba(255,21,0,1) 0%, rgba(255,231,0,1) 9%, rgba(91,255,0,1) 21%, rgba(0,255,205,1) 31%, rgba(0,0,255,1) 40%, rgba(119,0,255,1) 56%, rgba(255,0,172,1) 64%, rgba(255,0,0,1) 77%);" type="submit">
+                background: linear-gradient(90deg, 
+                rgba(255,21,0,1) 0%, rgba(255,231,0,1) 9%, 
+                rgba(91,255,0,1) 21%, rgba(0,255,205,1) 31%, 
+                rgba(0,0,255,1) 40%, rgba(119,0,255,1) 56%, 
+                rgba(255,0,172,1) 64%, rgba(255,0,0,1) 77%);" type="submit">
             {{ csrf_field() }}
         </form>
         @endauth
