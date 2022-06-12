@@ -38,10 +38,11 @@
             @else
             {{"🤣"}}
             : 
-            $messages->message
-            {{</p><p></p>}}
+            {{$messages->message}}
+            </p><p></p>
         @else
         {{"Nikt jeszcze nic nie napisał!"}}
+        @endforeach
     </div>
     <div style="background-color:#8D8B8B; width:30%">
         @auth
