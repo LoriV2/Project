@@ -19,7 +19,7 @@
     <div id="message-board">
         @foreach($messages as $messages)
         <p>{{$messages->user_name}}
-            @if ($messages->zweryfikowany == 2){
+            @if ($messages->zweryfikowany == 2)
             {{"😎"}}
             @else
             {{"🤣"}}
@@ -29,6 +29,7 @@
         <p></p>
         @endforeach
     </div>
+<div style="background-color:black ;">
     @auth
     <form method="POST" action="/sendverified">
         <p>Zacznij wpisywać wiadomość</p>
@@ -44,4 +45,5 @@
         {{ csrf_field() }}
     </form>
     @endauth
+</div>
 </body>
