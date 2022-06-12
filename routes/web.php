@@ -35,7 +35,8 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('/pliki', function () {
-        return view('pliki');
+        $files = DB::select('SELECT * FROM files');
+        return view('pliki', ['files' => $files]);
     })->name('pliki');
 
     Route::post('/createfile', function (Request $request) {
@@ -44,7 +45,7 @@ Route::middleware([
         $file_name = time() . '.' . $request->file->extension();
         $data = array('user' => $user, 'file_name' => $file_name);
         DB::table('files')->insert($data);
-        Storage::disk('s3')->put('pliki/'.$user, $request->file);
+        Storage::disk('s3')->put('pliki/' . $user, $request->file);
         return view('dashboard');
     });
 });
