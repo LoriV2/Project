@@ -41,7 +41,7 @@
                 @endauth
             </li>
             <li>
-                <a href="/'chat'" class="nav-link active">Chat</a>
+                <a href="/chat" class="nav-link active">Chat</a>
             </li>
         </ul>
 </nav>
@@ -79,24 +79,7 @@
         </form>
         @endauth
         <div id="message-board">
-            @foreach ($messages as $message)
-            <p>
-                if (!$messages->user_name==NULL) {
-                {{$messages->user_name}}
-                if ($messages->zweryfikowany == 1) {
-                echo "◊";
-                } else{
-                echo "";}
-                :
-            </p>
-            <p>{{$messages->message}}</p>
-            <br>
-            <p>{{$messages->updated_at}}</p>
-            @endforeach
-            }else
-            echo "nikt jeszcze nic nie napisał";
-
-
+            
         </div>
 
 </body>
