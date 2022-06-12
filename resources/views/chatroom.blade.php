@@ -30,8 +30,10 @@
 
 <body style="background-color:#7A7E7E" onLoad="window.scroll(0, 10000000000000000000)">
     <div id="message-board" ;>
+    @if ($messages->zweryfikowany > 0)
         @foreach($messages as $messages)
-        <p>{{$messages->user_name}}
+        <p>
+            {{$messages->user_name}}
             @if ($messages->zweryfikowany == 2)
             {{"😎"}}
             @else
@@ -41,6 +43,7 @@
         </p>
         <p></p>
         @endforeach
+    @endif
     </div>
     <div style="background-color:#8D8B8B; width:30%">
         @auth

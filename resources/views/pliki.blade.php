@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="bg-white shadow-xl sm:rounded-lg">
-            haaaaaaaaaaaaaaaaaaaaaaa
+            
         </div>
     </body>
 </x-app-layout>
