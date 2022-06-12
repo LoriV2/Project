@@ -25,7 +25,6 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected $space = 'App\\Http\\Controllers';
     protected $namespace = 'App\Http\Events';
     public function boot()
     {
