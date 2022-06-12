@@ -15,8 +15,8 @@
 
 
 
-<body style="background-color:#8D8B8B ;" onLoad="window.scroll(0, 10000000000000000000)">
-    <div id="message-board" style="background-color:#7A7E7E ;">
+<body ;style="background-color:#7A7E7E" onLoad="window.scroll(0, 10000000000000000000)">
+    <div id="message-board" ;>
         @foreach($messages as $messages)
         <p>{{$messages->user_name}}
             @if ($messages->zweryfikowany == 2)
@@ -30,7 +30,7 @@
         <p></p>
         @endforeach
     </div>
-    <div>
+    <div style="background-color:#8D8B8B">
         @auth
         <form method="POST" action="/sendverified">
             <p>Zacznij wpisywać wiadomość</p>

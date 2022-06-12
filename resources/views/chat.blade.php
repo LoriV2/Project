@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Leeee</title>
-    
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -48,7 +48,7 @@
 
 <body class="antialiased bg-light ">
     </head>
-    <iframe style="width:80% ; height:80%" src="https://heheeeee.herokuapp.com/chatroom" title="description">
+    <iframe style="width:100% ; height:400px" src="https://heheeeee.herokuapp.com/chatroom" title="description">
 
     </iframe>
 </body>
