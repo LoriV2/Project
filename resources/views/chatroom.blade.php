@@ -20,9 +20,9 @@
         @foreach($messages as $messages)
         <p>{{$messages->user_name}}
             @if ($messages->zweryfikowany == 2){
-            {{echo:"😎"}}
+            {{"😎"}}
             @else
-            {{echo:"🤣"}}
+            {{"🤣"}}
             @endif
             : </p>
         <p>{{$messages->message}}</p>
