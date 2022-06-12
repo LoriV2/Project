@@ -1,3 +1,17 @@
+<script>
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('dc89faadd64e9671ab01', {
+        cluster: 'eu'
+    });
+
+    var channel = pusher.subscribe('message-board');
+    channel.bind('Chat-Event', function(data) {
+
+    });
+</script>
+
 @auth
 <form method="POST" action="/sendverified">
     <p>Zacznij wpisywać wiadomość</p>

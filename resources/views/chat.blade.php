@@ -47,26 +47,9 @@
 </nav>
 
 <body class="antialiased bg-light ">
-
-
-    <script src="https://heheeeee.herokuapp.com/js/dbase.js">
-        // Enable pusher logging - don't include this in production
-        Pusher.logToConsole = true;
-
-        var pusher = new Pusher('dc89faadd64e9671ab01', {
-            cluster: 'eu'
-        });
-
-        var channel = pusher.subscribe('message-board');
-        channel.bind('Chat-Event', function(data) {
-
-        });
-    </script>
     </head>
-    
-    
     <iframe src="https://heheeeee.herokuapp.com/chatroom" title="description">
-    
+
     </iframe>
 </body>
 
