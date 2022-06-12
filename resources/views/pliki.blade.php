@@ -25,7 +25,7 @@
             $user = auth()->id();
             foreach ($files as $files){
             $path = 'pliki/'.$user.'/'.$files->file_name;
-            $url = Storage::disk('s3')->response($path);
+            $url = Storage::disk('s3')->mimeType($path);
             echo "<img src='".$url."'>";};
             @endphp
         </div>
