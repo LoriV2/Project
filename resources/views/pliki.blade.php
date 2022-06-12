@@ -26,9 +26,9 @@
             foreach ($files as $files){
             $path = 'pliki/'.$user.'/'.$files->file_name;
             $url = Storage::disk('s3')->url($path);
-            echo $url;
-            ;};
-            @endphp
+            echo "<a>".$url."<a><br>";
+                    ;};
+                    @endphp
         </div>
     </body>
 </x-app-layout>
