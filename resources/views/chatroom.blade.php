@@ -8,7 +8,7 @@
 
     var channel = pusher.subscribe('message-board');
     channel.bind('Chat-Event', function(data) {
-
+        document.location.reload(true)
     });
 </script>
 
