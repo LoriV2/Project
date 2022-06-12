@@ -17,10 +17,9 @@
 <body onLoad="window.scroll(0, 1000000)">
     <div id="message-board">
         @foreach($messages as $messages)
-        <p>{{$messages->id}}
-
-        </p>
-        <p></p>
+        <p>{{$messages->user_name}}: </p>
+        <p>{{$messages->message}}</p>
+        <p>{{$messages->zweryfikowany}}</p>
         @endforeach
     </div>
     @auth
