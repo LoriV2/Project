@@ -78,7 +78,7 @@
         {{ csrf_field() }}
     </form>
     @endauth
-    <iframe src="url" title="description">
+    <iframe title="description">
     <div id="message-board">
         @foreach($messages as $message)
         <p>echo $message->User_name;
