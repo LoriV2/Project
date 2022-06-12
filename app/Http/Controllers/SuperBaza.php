@@ -9,7 +9,7 @@ class superbaza extends Controller
 {
     public function Baza()
     {
-        $messages = DB::select('SELECT * FROM Chat');
-        return view('chat', ['messages' => $messages]);
+        
+       
     }
 }
