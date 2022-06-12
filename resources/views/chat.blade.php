@@ -80,10 +80,10 @@
     @endauth
     <div id="message-board">
         @foreach($messages as $message)
-        <p>$message->User_name
+        <p>echo $message->User_name;
         
         </p>
-        <p>$message->message</p>
+        <p>echo $message->message;</p>
         @endforeach
     </div>
 
