@@ -75,4 +75,8 @@ Route::middleware([
             return view('chatroom', ['messages' => $messages]);
         });
     }
+
 );
+Route::get('/chatroom', function () {
+    return view('chatroom');
+});
