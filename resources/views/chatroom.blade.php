@@ -9,7 +9,7 @@
 <script src="https://js.pusher.com/7.1/pusher.min.js"></script>
 <script>
     // Enable pusher logging - don't include this in production
-    function Jeszczepisze();
+    function Jeszczepisze(){};
     Pusher.logToConsole = true;
 
     var pusher = new Pusher('dc89faadd64e9671ab01', {
@@ -61,7 +61,7 @@
         <form method="POST" action="/sendnonverified">
             <input onfocus="Jeszczepisze(true)" onblur="Jeszczepisze(false)" type="text" name="user_name" placeholder="Wpisz swój nick">
             <input onfocus="Jeszczepisze(true)" onblur="Jeszczepisze(false)" type="text" name="message" placeholder="Wpisz swoją wiadomość">
-            <input onclick="Klik()" style="
+            <input style="
             -webkit-text-stroke-width: 1px;
              -webkit-text-stroke-color: white;
             background: rgb(255,21,0);
