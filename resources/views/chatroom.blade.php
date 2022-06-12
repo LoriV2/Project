@@ -23,6 +23,7 @@
             echo "😎";
             }else
             echo "🤣";
+            @endif
             : </p>
         <p>{{$messages->message}}</p>
         <p></p>
