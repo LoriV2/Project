@@ -25,8 +25,8 @@
             $user = auth()->id();
             foreach ($files as $files){
             $path = 'pliki/'.$user.'/'.$files->file_name;
-            $url = Storage::disk('s3')->url($path);
-            echo "<a>".$url."<a><br>";
+            $url = Storage::url($path);
+            echo "<a href='".$url."'>".$files->file_name."<a><br>";
                     ;};
                     @endphp
         </div>
