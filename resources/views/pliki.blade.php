@@ -28,9 +28,8 @@
             $url = Storage::temporaryUrl(
             $path, now()->addMinutes(5)
             );
-            echo "<a href='".$url."'>".$files->file_name."<a><br>";
-                    ;};
-                    @endphp
+            echo "<img src='".$url."'>";};
+            @endphp
         </div>
     </body>
 </x-app-layout>
