@@ -37,6 +37,7 @@
             {{"😎"}}
             @else
             {{"🤣"}}
+            @endif
             : 
             {{$messages->message}}
             </p><p></p>
