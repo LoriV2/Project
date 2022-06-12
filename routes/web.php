@@ -78,5 +78,5 @@ Route::middleware([
 );
 Route::get('/chatroom', function () {
     $messages = DB::select('SELECT * FROM Chat');
-    return view('chatroom', ['message' => $messages]);
+    return view('chatroom', ['messages' => $messages]);
 });

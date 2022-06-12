@@ -16,10 +16,10 @@
 
 
 <div id="message-board">
-    @foreach($message as $messages)
-    <p>{{$message->User_name}}
+    @foreach($messages as $messages)
+    <p>{{$messages->User_name}}
 
     </p>
-    <p>{{$message->message}}</p>
+    <p>{{$messages->message}}</p>
     @endforeach
 </div>
