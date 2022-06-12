@@ -23,12 +23,10 @@
         <div class="bg-white shadow-xl sm:rounded-lg">
             @php
             $user = auth()->id();
-            $file=$file_name->file_name;
             foreach ($files as $files){
-            $path = 'pliki/'.$user.'/'.$file;
+            $path = 'pliki/'.$user.'/'.files->file_name;
             $contents = Storage::get($path);
-            echo $contenst;
-            }
+            echo $contenst;}
             @endphp
         </div>
     </body>
