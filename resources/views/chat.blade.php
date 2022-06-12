@@ -41,7 +41,7 @@
                 @endauth
             </li>
             <li>
-                <a href="/chat" class="nav-link active">Chat</a>
+                <a href="https://heheeeee.herokuapp.com/chat" class="nav-link active">Chat</a>
             </li>
         </ul>
 </nav>
