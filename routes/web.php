@@ -39,10 +39,10 @@ Route::middleware([
     })->name('pliki');
 
     Route::post('/createfile', function (Request $request) {
-        $user_id = auth()->id();
+        $user = auth()->id();
         $request->file;
         $file_name = time() . '.' . $request->file->extension();
-        $data = array('user_id' => $user_id, 'file_name' => $file_name);
+        $data = array('user' => $user, 'file_name' => $file_name);
         DB::table('files')->insert($data);
         Storage::disk('s3')->put('pliki', $request->file);
         return view('dashboard');
