@@ -48,7 +48,7 @@
 
 <body class="antialiased bg-light ">
     </head>
-    <iframe src="https://heheeeee.herokuapp.com/chatroom" title="description">
+    <iframe style="width:80% ; height:80%" src="https://heheeeee.herokuapp.com/chatroom" title="description">
 
     </iframe>
 </body>
