@@ -41,7 +41,7 @@
                 @endauth
             </li>
             <li>
-                <a href="{{route('chat')}}" class="nav-link active">Chat</a>
+                <a href="url(/'chat')" class="nav-link active">Chat</a>
             </li>
         </ul>
 
