@@ -55,7 +55,8 @@ Route::post('/sendnonverified', function (Request $request) {
     event(new ChatEvent($message));
     $data = array('user_name' => $user_name, 'message' => $message, 'zweryfikowany' => $verified);
     DB::table('chat')->insert($data);
-    return view('chat');
+    $messages = DB::select('SELECT * FROM Chat');
+    return view('chat', ['messages' => $messages]);
 });
 Route::middleware([
     'auth:sanctum',
@@ -70,7 +71,8 @@ Route::middleware([
             event(new ChatEvent($message));
             $data = array('user_name' => $user_name, 'message' => $message, 'zweryfikowany' => $verified);
             DB::table('chat')->insert($data);
-            return view('chat');
+            $messages = DB::select('SELECT * FROM Chat');
+            return view('chat', ['messages' => $messages]);
         });
     }
 );

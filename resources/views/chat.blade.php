@@ -49,7 +49,7 @@
 <body class="antialiased bg-light ">
 
 
-    <script>
+    <script src="https://heheeeee.herokuapp.com/js/dbase.js">
         // Enable pusher logging - don't include this in production
         Pusher.logToConsole = true;
 
@@ -59,7 +59,7 @@
 
         var channel = pusher.subscribe('message-board');
         channel.bind('Chat-Event', function(data) {
-            
+
         });
     </script>
     </head>
@@ -79,7 +79,16 @@
     </form>
     @endauth
     <div id="message-board">
-
+        @foreach($messages as $message)
+        <p>$message->User_name
+            @if($message->Zweryfikowany == 2)
+            echo"⇴";
+            @else
+            echo"";
+            @endif
+        </p>
+        <p>$message->message</p>
+        @endforeach
     </div>
 
 </body>
