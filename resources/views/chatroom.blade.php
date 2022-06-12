@@ -15,7 +15,7 @@
 
 
 
-<body ;style="background-color:#7A7E7E" onLoad="window.scroll(0, 10000000000000000000)">
+<body style="background-color:#7A7E7E" onLoad="window.scroll(0, 10000000000000000000)">
     <div id="message-board" ;>
         @foreach($messages as $messages)
         <p>{{$messages->user_name}}
