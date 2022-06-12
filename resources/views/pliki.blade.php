@@ -25,7 +25,9 @@
             $user = auth()->id();
             foreach ($files as $files){
             $path = 'pliki/'.$user.'/'.$files->file_name;
-            $url = Storage::url($path);
+            $url = Storage::temporaryUrl(
+            $path, now()->addMinutes(5)
+            );
             echo "<a href='".$url."'>".$files->file_name."<a><br>";
                     ;};
                     @endphp
