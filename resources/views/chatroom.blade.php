@@ -18,9 +18,14 @@
 <body onLoad="window.scroll(0, 1000000)">
     <div id="message-board">
         @foreach($messages as $messages)
-        <p>{{$messages->user_name}}: </p>
+        <p>{{$messages->user_name}}
+            @if ($messages->zweryfikowany == 2){
+            echo "😎";
+            }else
+            echo "🤣";
+            : </p>
         <p>{{$messages->message}}</p>
-        <p>{{$messages->zweryfikowany}}</p>
+        <p></p>
         @endforeach
     </div>
     @auth
