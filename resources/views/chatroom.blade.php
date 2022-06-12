@@ -48,7 +48,7 @@
         @else
         <form method="POST" action="/sendnonverified">
             <input type="text" name="user_name" placeholder="Wpisz swój nick">
-            <input type="text" name="message">
+            <input type="text" name="message" placeholder="Wpisz swoją wiadomość">
             <input type="submit">
             {{ csrf_field() }}
         </form>
