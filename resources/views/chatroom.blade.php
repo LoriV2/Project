@@ -15,7 +15,7 @@
 
 
 
-<body onLoad="window.scroll(0, 1000000)">
+<body style="background-color:#8D8B8B ;" onLoad="window.scroll(0, 10000000000000000000)">
     <div id="message-board" style="background-color:#7A7E7E ;">
         @foreach($messages as $messages)
         <p>{{$messages->user_name}}
@@ -30,7 +30,7 @@
         <p></p>
         @endforeach
     </div>
-    <div style="background-color:#8D8B8B ;">
+    <div>
         @auth
         <form method="POST" action="/sendverified">
             <p>Zacznij wpisywać wiadomość</p>
