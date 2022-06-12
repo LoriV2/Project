@@ -24,7 +24,7 @@
             @php
             $user = auth()->id();
             foreach ($files as $files){
-            $path = 'pliki/'.$user.'/'.files->file_name;
+            $path = 'pliki/'.$user.'/'.$files->file_name;
             return Storage::get($path);};
             @endphp
         </div>
