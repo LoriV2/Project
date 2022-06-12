@@ -64,7 +64,7 @@ Route::middleware([
 ])->group(
     function () {
         Route::post('/sendverified', function () {
-            $user_name = auth()->user();
+            $user_name = auth()->user()->name;
             $verified = 2;
             $message = request()->message;
             event(new ChatEvent($message));
