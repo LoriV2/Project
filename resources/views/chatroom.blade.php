@@ -34,13 +34,13 @@
         if (isset($messages)){
         foreach($messages as $messages){
         echo "<p>";
-            {{$messages->user_name}}
+            echo $messages->user_name;
             if ($messages->zweryfikowany == 2){
-            {{"😎"}}
+            echo "😎";
             }else{
-            {{"🤣"}}
+            echo "🤣";
             }
-            : {{$messages->message}}
+            : echo $messages->message;
         </p>
         <p></p>
         }};
