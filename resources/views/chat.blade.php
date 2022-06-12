@@ -78,6 +78,7 @@
         {{ csrf_field() }}
     </form>
     @endauth
+    <iframe src="url" title="description">
     <div id="message-board">
         @foreach($messages as $message)
         <p>echo $message->User_name;
@@ -86,7 +87,7 @@
         <p>echo $message->message;</p>
         @endforeach
     </div>
-
+    </iframe>
 </body>
 
 </html>
