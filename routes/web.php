@@ -36,7 +36,7 @@ Route::middleware([
 
     Route::get('/pliki', function () {
         $user = auth()->id();
-        $files = DB::select('SELECT * FROM files WHERE user = $user ');
+        $files = DB::table('files')->where('user','=',$user)->get();
         return view('pliki', ['files' => $files]);
     })->name('pliki');
 
