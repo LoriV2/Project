@@ -34,19 +34,19 @@
         if (isset($messages)){
         foreach($messages as $messages){
         echo "<p>";
-            echo $messages['user_name'];
-            if ($messages['zweryfikowany'] == 2){
+            echo $messages->user_name;
+            if ($messages->zweryfikowany == 2){
             echo "😎";
             }else{
             echo "🤣";
             };
-             echo ": ";
-             echo $messages['message'];
-             echo "</p><p></p>";
+            echo ": ";
+            echo $messages->message;
+            echo "</p>
+        <p></p>";
         };
-    }else 
-    echo "Nikt jeszcze nic nie napisał!"
-    ;
+        }else
+        echo "Nikt jeszcze nic nie napisał!";
         @endphp
     </div>
     <div style="background-color:#8D8B8B; width:30%">
