@@ -89,3 +89,8 @@ Route::get('/chatroom', function () {
     $messages = DB::select('SELECT * FROM files');
     return view('chatroom', ['messages' => $messages]);
 });
+
+Route::post('/startroomchat', function () {
+    $data = array('user_name' => 'Start', 'message' => 'Nikt jescze nic nie napisał!', 'zweryfikowany' => 2);
+    DB::table('chat')->insert($data);
+});
