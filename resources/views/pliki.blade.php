@@ -26,7 +26,7 @@
             foreach ($files as $files){
             $path = 'pliki/'.$user.'/'.$files->file_name;
             if (Storage::disk('s3')->exists($path)){
-            $url = Storage::disk('s3')->URL($path);
+            $url = Storage::disk('s3')->url($path);
             echo "<a href='".$url."'>".$files->file_name."</a>";}
         };
             @endphp
