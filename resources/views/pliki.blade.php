@@ -25,8 +25,7 @@
             $user = auth()->id();
             foreach ($files as $files){
             $path = 'pliki/'.$user.'/'.$files->file_name;
-            $exist = Storage::disk('s3')->has($path);
-            if ($exist == true){
+            if (Storage::disk('s3')->exists($path)){
             $url = Storage::disk('s3')->URL($path);
             echo "<a href='".$url."'>".$files->file_name."</a>";}
         };
